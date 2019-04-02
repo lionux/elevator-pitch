@@ -1,0 +1,105 @@
+\ProvidesPackage{bstyle}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{fancybox}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{psfrag}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{times}
+\usepackage{cite} % to sort and compress citations
+\usepackage{color}
+\usepackage{colortbl}
+
+\usepackage[english]{babel}
+
+% --- for environments
+\newtheorem{deliverable}{Research Deliverable}
+\newtheorem{objective}{Research Objective}
+\newtheorem{proposition}{Proposition}
+
+% standard topological space
+\def\R{{\mathbb R}}
+\def\S{{\mathbb S}}
+\def\Z{{\mathbb Z}}
+
+% for topological space
+\def\X{{\mathbb{X}}}
+\def\M{{\mathbb M}}
+\def\Y{{\mathbb Y}}
+
+\newcommand {\mm}[1] {\ifmmode{#1}\else{\mbox{\(#1\)}}\fi}
+\newcommand{\Fdist}[2]      {\mm{\mathcal{F}}({#1},{#2})}
+
+%% color def
+\definecolor{darkpink}{RGB}{219, 48, 122}
+
+%% for colorblocks!
+\setbeamercolor{yellow}{fg=black,bg=yellow}
+\setbeamercolor{lightyellow}{fg=black,bg=yellow!40}
+\setbeamercolor{orange}{fg=black,bg=orange}
+\setbeamercolor{lightorange}{fg=black,bg=orange!40}
+%%
+\newenvironment{colorblock}[2]
+{\setbeamercolor{item}{fg=#1,bg=#1}\begin{beamerboxesrounded}[upper=#1,lower=#2,shadow=true]}
+{\end{beamerboxesrounded}}
+
+%% remove nav bars
+%gets rid of navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+
+%\beamertemplategridbackground[3px]
+\beamertemplategridbackground[.2cm]
+
+\graphicspath{{figs/}{../../paper/graphics/}{../figs/}}
+
+
+\usepackage{tikz}
+\usepackage[absolute,overlay]{textpos}
+\newcommand{\showdim}[1]{
+\begin{textblock*}{40mm}(118mm,14mm)
+\tikz[label distance=2mm]
+\node[circle,fill=blue!15] at (0,0) {$\R^{{#1}}$};
+\end{textblock*}
+}
+
+% ... to make TODO items easy to see
+\newcommand{\todo}[1]{{\color{red}[[\textbf{XXX TODO: }#1]]}}
+\definecolor{Gray}{gray}{0.9}
+
+% ... for striketrhough text
+\usepackage{soul}
+
+% ... for referencing
+\newcommand{\corref}[1]{Corollary~\ref{cor:#1}}
+\newcommand{\defref}[1]{Definition~\ref{def:#1}}
+\newcommand{\exref}[1]{Example~\ref{ex:#1}}
+\newcommand{\lemref}[1]{Lemma~\ref{lem:#1}}
+\newcommand{\probref}[1]{Problem~\ref{prob:#1}}
+\newcommand{\propref}[1]{Proposition~\ref{prop:#1}}
+\newcommand{\thmref}[1]{Theorem~\ref{thm:#1}}
+\newcommand{\thmpartref}[2]{\thmref{#1} Part~\ref{thmPart:#2}}
+\newcommand{\ssref}[1]{Section~\ref{ss:#1}}
+\newcommand{\figref}[1]{Figure~\ref{fig:#1}}
+\newcommand{\subfigref}[2]{Figure~\ref{fig:#1}\subref{fig:#2}}
+\newcommand{\secref}[1]{Section~\ref{sec:#1}}
+\newcommand{\ssecref}[1]{Section~\ref{ss:#1}}
+\newcommand{\delref}[1]{research deliverable~\ref{del:#1}}
+\newcommand{\Delref}[1]{Research deliverable~\ref{del:#1}}
+\newcommand{\objref}[1]{research objective~\ref{obj:#1}}
+\newcommand{\Objref}[1]{Research objective~\ref{obj:#1}}
+\newcommand{\tabref}[1]{Table~\ref{tab:#1}}
+\newcommand{\chref}[1]{Chapter~\ref{CH:#1}}
+
+% ... variables
+\newcommand{\simComp}{\mathbb{K}}
+\newcommand{\dgms}{\mathcal{D}_M^m}
